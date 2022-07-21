@@ -32,7 +32,7 @@ function commit()
 case $1 in
     commit)
         # call function
-    push_commit
+    commit
     exit 0
     ;;
 esac
