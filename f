@@ -76,7 +76,6 @@ case $1 in
     ;;
 esac
 
-
 # what to run
 # if [ "$1" == 'push' ]; then
 #     # call function
