@@ -3,6 +3,8 @@
 # to github and running the script on the command line. Some commands are combined
 # for greater efficiency.
 
+set -ex
+
 
 # commit changes and push to repo
 function undo()
@@ -27,16 +29,25 @@ function commit()
     git commit -am 'commit msg'
 }
 
+case $1 in
+    commit)
+        # call function
+    push_commit
+    exit 0
+    ;;
+esac
+
+
 # what to run
 if [ "$1" == 'push' ]; then
     # call function
     push_commit
     exit 0
 
-elif [ "$1" == 'commit' ]; then
-    # call function
-    commit
-    exit 0
+# elif [ "$1" == 'commit' ]; then
+#     # call function
+#     commit
+#     exit 0
 
 elif [ "$1" == 'undo' ]; then
     # check if two arguments provided
